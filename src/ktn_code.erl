@@ -95,7 +95,8 @@ parse_tree(Source) ->
     IoString        = ktn_io_string:new(SourceStr),
     {ok, Forms}     = ktn_dodger:parse( IoString
                                       , {1, 1}
-                                      , [{scan_opts, [text]}]
+                                      , [{scan_opts, [text]}
+                                        , no_fail]
                                       ),
     ok              = file:close(IoString),
 
